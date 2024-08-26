@@ -62,14 +62,11 @@ public class Segmented_Sieve {
         }
 
         for (int prime : genPrime) {
-            
-            System.out.println(prime);
             int firstMultiple = (low / prime) * prime;
             if (firstMultiple < low) {
                 firstMultiple += prime;
             }
             int start = Math.max(firstMultiple, prime * prime);
-            System.out.println(start);
 
             for (int j = start; j <= high; j += prime) {
                 temp[j - low] = false;
